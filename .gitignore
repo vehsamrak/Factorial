@@ -3,3 +3,6 @@ vendor/
 
 # PhpStorm
 .idea/
+
+# Code coverage
+/coverage.xml
