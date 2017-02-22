@@ -1,6 +1,6 @@
 <?php
 
-namespace OptionBundle\Service;
+namespace Vehsamrak\Factorial;
 
 /**
  * @author Vehsamrak

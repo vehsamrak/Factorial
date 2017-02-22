@@ -1,6 +1,8 @@
 <?php
 
-namespace OptionBundle\Service;
+namespace Tests;
+
+use Vehsamrak\Factorial\Factorial;
 
 class FactorialTest extends \PHPUnit_Framework_TestCase
 {
