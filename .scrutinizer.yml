@@ -1,11 +1,15 @@
 build:
-  environment:
+    environment:
+        php:
+            version: 7.0.0
+    tests:
+        override:
+            -
+                command: vendor/bin/phpunit --coverage-clover=coverage.xml
+                coverage:
+                    file: coverage.xml
+                    format: php-clover
+checks:
     php:
-      version: 7.0.0
-  tests:
-    override:
-      -
-        command: vendor/bin/phpunit --coverage-clover=coverage.xml
-        coverage:
-          file: coverage.xml
-          format: php-clover
+        code_rating: true
+        duplication: true
