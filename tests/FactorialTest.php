@@ -8,7 +8,7 @@ class FactorialTest extends \PHPUnit_Framework_TestCase
 {
 
     /** @test */
-    public function factorialize_0_1(): void
+    public function factorialize_0_1()
     {
         $factorial = new Factorial();
 
@@ -18,7 +18,7 @@ class FactorialTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    public function factorialize_1_1(): void
+    public function factorialize_1_1()
     {
         $factorial = new Factorial();
 
@@ -28,7 +28,7 @@ class FactorialTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    public function factorialize_2_2(): void
+    public function factorialize_2_2()
     {
         $factorial = new Factorial();
 
@@ -38,7 +38,7 @@ class FactorialTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    public function factorialize_3_6(): void
+    public function factorialize_3_6()
     {
         $factorial = new Factorial();
 
@@ -48,7 +48,7 @@ class FactorialTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
-    public function factorialize_4_24(): void
+    public function factorialize_4_24()
     {
         $factorial = new Factorial();
 
