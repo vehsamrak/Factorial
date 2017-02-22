@@ -11,19 +11,16 @@ Tested factorialization library.
 * Composer (if you dont have composer, visit https://getcomposer.org/download)
 
 ### Installation
-Clone this repository: `git clone https://github.com/Vehsamrak/factorial.git factorial && cd $_`
-
-Install with composer: `composer install`
+Install with composer: `composer require vehsamrak/factorial`
 
 ### Usage
-Import Factorial class: `use Vehsamrak\Factorial\Factorial;`
-
-To calculate factorial use:
 ```
-$factorial = new Factorial();
-$result = $factorial->factorialize(0); // $result == 1
-$result = $factorial->factorialize(3); // $result == 6
-$result = $factorial->factorialize(10); // $result == 3628800 
+use Vehsamrak\Factorial\Factorial as FactorialCalculator;
+
+$factorialCalculator = new FactorialCalculator();
+$result = $factorialCalculator->factorialize(0); // $result == 1
+$result = $factorialCalculator->factorialize(3); // $result == 6
+$result = $factorialCalculator->factorialize(10); // $result == 3628800 
 ```
 
 ### Tests
