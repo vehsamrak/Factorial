@@ -24,4 +24,6 @@ $result = $factorialCalculator->factorialize(10); // $result == 3628800
 ```
 
 ### Tests
-To run tests with built-in PHPUnit type: `vendor/bin/phpunit`
+To run tests clone this repository and install dependencies with `composer install`.
+
+Then with built-in PHPUnit type: `vendor/bin/phpunit`
