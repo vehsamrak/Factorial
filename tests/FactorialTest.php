@@ -7,6 +7,35 @@ use Vehsamrak\Factorial\Factorial;
 class FactorialTest extends \PHPUnit_Framework_TestCase
 {
 
+    public function provideFactorialsWithResults(): array
+    {
+        return [
+            [0, 1],
+            [1, 1],
+            [2, 2],
+            [3, 6],
+            [4, 24],
+            [5, 120],
+            [6, 720],
+        ];
+    }
+
+    public function provideNegativeNumbers(): array
+    {
+        return [
+            [-1],
+            [-2],
+            [-3],
+            [-4],
+            [-5],
+            [-6],
+            [-7],
+            [-8],
+            [-9],
+            [-10],
+        ];
+    }
+
     /**
      * @test
      * @dataProvider provideFactorialsWithResults
@@ -20,16 +49,15 @@ class FactorialTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($result, $factorialResult);
     }
 
-    public function provideFactorialsWithResults(): array
+    /**
+     * @test
+     * @dataProvider provideNegativeNumbers
+     */
+    public function factorialize_negativeNumber_wrongArgumentException(int $numberToFactorialize): void
     {
-        return [
-            [0, 1],
-            [1, 1],
-            [2, 2],
-            [3, 6],
-            [4, 24],
-            [5, 120],
-            [6, 720],
-        ];
+        $factorial = new Factorial();
+
+        $this->expectException(\InvalidArgumentException::class);
+        $factorial->factorialize($numberToFactorialize);
     }
 }
