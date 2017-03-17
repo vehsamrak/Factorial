@@ -7,53 +7,29 @@ use Vehsamrak\Factorial\Factorial;
 class FactorialTest extends \PHPUnit_Framework_TestCase
 {
 
-    /** @test */
-    public function factorialize_0_1()
+    /**
+     * @test
+     * @dataProvider provideFactorialsWithResults
+     */
+    public function factorialize_numberToFactorialize_factorizationResult(int $numberToFactorialize, int $result): void
     {
         $factorial = new Factorial();
 
-        $factorialResult = $factorial->factorialize(0);
+        $factorialResult = $factorial->factorialize($numberToFactorialize);
 
-        $this->assertEquals(1, $factorialResult);
+        $this->assertEquals($result, $factorialResult);
     }
 
-    /** @test */
-    public function factorialize_1_1()
+    public function provideFactorialsWithResults(): array
     {
-        $factorial = new Factorial();
-
-        $factorialResult = $factorial->factorialize(1);
-
-        $this->assertEquals(1, $factorialResult);
-    }
-
-    /** @test */
-    public function factorialize_2_2()
-    {
-        $factorial = new Factorial();
-
-        $factorialResult = $factorial->factorialize(2);
-
-        $this->assertEquals(2, $factorialResult);
-    }
-
-    /** @test */
-    public function factorialize_3_6()
-    {
-        $factorial = new Factorial();
-
-        $factorialResult = $factorial->factorialize(3);
-
-        $this->assertEquals(6, $factorialResult);
-    }
-
-    /** @test */
-    public function factorialize_4_24()
-    {
-        $factorial = new Factorial();
-
-        $factorialResult = $factorial->factorialize(4);
-
-        $this->assertEquals(24, $factorialResult);
+        return [
+            [0, 1],
+            [1, 1],
+            [2, 2],
+            [3, 6],
+            [4, 24],
+            [5, 120],
+            [6, 720],
+        ];
     }
 }
